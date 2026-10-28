@@ -20,6 +20,7 @@ stage('deploy') {
     echo "docker is deployed successfully"
       echo 'Access: http://YOUR_SERVER_IP:8082'
     }
+  }
     failure {
             echo 'Deployment failed. Check Console Output.'
     }
