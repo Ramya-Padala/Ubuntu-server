@@ -15,7 +15,7 @@ stage('Deploy') {
             docker run -d \
                 --name html-nginx-container \
                 --restart unless-stopped \
-                -p 8080:80 \
+                -p 8085:80 \
                 html-nginx-app:latest
         '''
     }
@@ -24,10 +24,10 @@ stage('Deploy') {
     sh '''
             sleep 3
             docker ps
-            curl --fail http://127.0.0.1:8080
+            curl --fail http://127.0.0.1:8085
         '''
      echo "Docker is deployed successfully!"
-        echo "Access: http://192.168.200.165:8080"
+        echo "Access: http://192.168.200.165:8085"
   }
   }
   
