@@ -5,7 +5,7 @@ node {
   }
 stage('deploy') {
   sh '''
-  docker build -t nginx:latest
+  docker build -t nginx:latest .
   docker rm -f html-nginx-container 2>/dev/null || true
   docker run -d \
                         --name html-nginx-container \
